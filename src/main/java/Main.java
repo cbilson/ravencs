@@ -10,7 +10,7 @@ public class Main {
 		if (args.length > 0)
 			port = Integer.parseInt(args[0]);
 		else if (System.getenv("HTTP_PLATFORM_PORT") != null)
-			port = Integer.parseInt("HTTP_PLATFORM_PORT");
+			port = Integer.parseInt(System.getenv("HTTP_PLATFORM_PORT"));
 			
 		port(port);
 		
@@ -60,10 +60,11 @@ public class Main {
 		for (int i = 0; i < input.length(); i++) {
 			equ[i] = input.charAt(i);
 		}
+
 		if(equ[0]=='x'){
-			System.out.print("1");
-			return;
+			return "1";
 		}
+		
 		//this finds the position of x
 		for (int i = 0; i < input.length(); i++) {
 			if (equ[i] == 'x') {
@@ -86,8 +87,7 @@ public class Main {
 					exp = Integer.parseInt(exp2);		
 				}
 				else{
-					System.out.print(coef);
-					return;
+					return "" + coef;
 				}
 					
 			}
